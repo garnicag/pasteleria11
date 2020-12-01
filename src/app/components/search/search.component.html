@@ -1,4 +1,6 @@
-<form action="">
-  <input type="text" name="search" id="search" placeholder="Buscar en la tienda..." />
-  <button type="submit">Buscar</button>
-</form>
+<div class="searchWrapper">
+  <form method="post">
+    <input class="search" type="text" name="search" placeholder="Buscar en la tienda..." #searchTerm />
+    <button class="submit" type="button" (click)="searchItem(searchTerm.value)">Buscar</button>
+  </form>
+</div>

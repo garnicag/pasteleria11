@@ -1,0 +1,7 @@
+<app-search (searchSubmitEvent)="filterResults($event)"></app-search>
+<div class="itemsWrapper">
+  <div class="items" *ngFor="let item of itemsFiltered">
+    <app-item title="{{item.title}}" price="{{item.price}}" picture="{{item.picture}}"></app-item>
+  </div>
+  <div class="noResults" *ngIf="!hasResults">No se encontraron productos</div>
+</div>

@@ -8,4 +8,5 @@ import { Component, Input } from '@angular/core';
 export class ItemComponent {
   @Input() title: string;
   @Input() price: number;
+  @Input() picture: string;
 }

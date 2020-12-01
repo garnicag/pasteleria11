@@ -7,11 +7,14 @@ import { AppComponent } from './app.component';
 import { SearchComponent } from './components/search/search.component';
 import { ItemComponent } from './components/item/item.component';
 
+import { HomeComponent } from './views/home/home.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     SearchComponent,
-    ItemComponent
+    ItemComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,29 @@
+.searchWrapper {
+  text-align: center;
+  padding: 10px;
+
+  input.search {
+    border: none;
+    background: #eee;
+    font-size: 20px;
+    font-family: 'Lato', Arial, Helvetica, sans-serif;
+    font-weight: 300;
+    padding: 10px;
+    max-width: 500px;
+    width: 90%;
+    outline: none;
+    border-radius: 10px 0 0 10px;
+  }
+
+  button.submit {
+    border: none;
+    background: #f08632;
+    color: #fff;
+    font-size: 20px;
+    font-family: 'Lato', Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    padding: 10px;
+    outline: none;
+    border-radius: 0 10px 10px 0;
+  }
+}
