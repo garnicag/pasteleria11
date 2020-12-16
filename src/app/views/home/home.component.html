@@ -29,6 +29,7 @@
     </div>
     <hr>
     <form>
+      <button *ngIf="cartList.length > 0" (click)="checkout();">Pagar</button>
       <button (click)="sessionStop();">Cerrar Sesión</button>
     </form>
   </div>

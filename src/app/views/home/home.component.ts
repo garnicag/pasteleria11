@@ -64,4 +64,8 @@ export class HomeComponent implements OnInit {
     });
     this.totalPrice -= parseInt(price, 10);
   }
+
+  checkout(): void {
+    alert('Gracias por tu compra. Tu pedido llegará pronto');
+  }
 }
