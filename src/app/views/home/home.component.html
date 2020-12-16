@@ -1,7 +1,63 @@
+<header>
+  <h1>Pastelería <span>11</span></h1>
+  <div class="user">
+    <span *ngIf="isLoggedIn">
+      <img src="./assets/profile-ab.jpg" />
+      <div class="cartItems">{{cartList.length}}</div>
+      <span class="wrapper" (click)="toggleUserMenu();">Hola: <span class="name">Alberto Balsalm</span></span>
+    </span>
+
+    <span *ngIf="!isLoggedIn">
+      <img src="./assets/profile.jpg" />
+      <span class="sessionStart" (click)="toggleModal();">Iniciar sesión</span>
+    </span>
+  </div>
+
+  <div class="userMenu" *ngIf="showUserMenu">
+    <div class="cancel" (click)="toggleUserMenu();">X</div>
+    <h4>Carrito de compras</h4><h4 class="price">${{totalPrice}}</h4>
+    <span class="noItems" *ngIf="cartList.length <= 0">No tienes items en el carrito de compras</span>
+
+    <div class="cartList">
+      <div class="item" *ngFor="let item of cartList">
+        <div class="picture" [ngStyle]="{'background-image': 'url(' + item.picture + ')'}"></div>{{item.title}}
+        <span class="itemPrice">
+          ${{item.price}}
+          <button class="removeItem" (click)="removeItem(item.uid, item.price)">-</button>
+        </span>
+      </div>
+    </div>
+    <hr>
+    <form>
+      <button (click)="sessionStop();">Cerrar Sesión</button>
+    </form>
+  </div>
+
+  <div class="userAuth" *ngIf="loginModal">
+    <form>
+      <div>
+        <h4>Inicio de Sesión</h4>
+      </div>
+      <div>
+        <label>E-mail</label>
+        <input class="field" type="text" />
+      </div>
+      <div>
+        <label>Contraseña</label>
+        <input class="field" type="password" />
+      </div>
+      <div>
+        <button (click)="sessionStart();">Iniciar Sesión</button>
+      </div>
+    </form>
+
+    <div class="cancel" (click)="toggleModal();">X</div>
+  </div>
+</header>
 <app-search (searchSubmitEvent)="filterResults($event)"></app-search>
 <div class="itemsWrapper">
   <div class="items" *ngFor="let item of itemsFiltered">
-    <app-item title="{{item.title}}" price="{{item.price}}" picture="{{item.picture}}"></app-item>
+    <app-item title="{{item.title}}" price="{{item.price}}" picture="{{item.picture}}" itemId="{{item.id}}" (addToCartEvent)="addToCart($event)"></app-item>
   </div>
   <div class="noResults" *ngIf="!hasResults">No se encontraron productos</div>
 </div>

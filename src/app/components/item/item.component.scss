@@ -6,6 +6,8 @@
   margin: 20px;
   text-align: center;
   position: relative;
+  border-radius: 5px;
+  overflow: hidden;
 
   p.price {
     position: absolute;
@@ -38,5 +40,19 @@
       padding: 0;
       color: #fff;
     }
+  }
+
+  button.addToCart {
+    background: #f08632;
+    color: #fff;
+    cursor: pointer;
+    position: absolute;
+    z-index: 1;
+    outline: none;
+    right: 4px;
+    top: 4px;
+    padding: 4px;
+    border: none;
+    border-radius: 3px;
   }
 }
